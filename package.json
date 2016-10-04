@@ -1,0 +1,40 @@
+{
+  "name": "brandf-banner-0",
+  "version": "1.0.0",
+  "description": "A banner for the brandf blog.",
+  "main": "index.html",
+  "scripts": {
+    "build": "webpack --progress --colors",
+    "start":  "webpack-dev-server --inline --hot --progress --colors --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandf/brandf-banner-0.git"
+  },
+  "author": "Brandon Furtwangler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandf/brandf-banner-0/issues"
+  },
+  "homepage": "https://github.com/brandf/brandf-banner-0#readme",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "glsl-template-loader": "^1.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0"
+  }
+}
