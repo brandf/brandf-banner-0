@@ -1,1 +1,1 @@
-# brandf-banner-0
+https://brandf.github.io/brandf-banner-0/
