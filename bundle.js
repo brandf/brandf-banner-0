@@ -46,26 +46,9 @@
 
 	'use strict';
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	__webpack_require__(1);
 
 	__webpack_require__(298);
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Dog = function () {
-	    function Dog() {
-	        _classCallCheck(this, Dog);
-	    }
-
-	    _createClass(Dog, [{
-	        key: 'bark',
-	        value: function bark() {}
-	    }]);
-
-	    return Dog;
-	}();
 
 /***/ },
 /* 1 */
@@ -8227,7 +8210,7 @@
 
 
 	// module
-	exports.push([module.id, "#gl {\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: red;\r\n}", ""]);
+	exports.push([module.id, "html, body {\n  margin: 0;\n  height: 100%;\n}\n\n#gl {\n  width: 100%;\n  height: 100%;\n  background-color: blue;\n}\n", ""]);
 
 	// exports
 
