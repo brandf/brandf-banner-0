@@ -16787,7 +16787,7 @@
 	
 	
 	// module
-	exports.push([module.id, "html, body {\r\n  margin: 0;\r\n  height: 100%;\r\n}\r\n\r\n#gl {\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: blue;\r\n}\r\n", ""]);
+	exports.push([module.id, "html, body {\n  margin: 0;\n  height: 100%;\n}\n\n#gl {\n  width: 100%;\n  height: 100%;\n  background-color: blue;\n}\n", ""]);
 	
 	// exports
 
