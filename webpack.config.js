@@ -3,7 +3,10 @@ module.exports = {
   output: {
     path: '.',
     filename: 'bundle.js',
+    sourceMapFilename: '[file].map',
+    devtoolModuleFilenameTemplate: 'webpack:///[resource-path]?[loaders]',
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
