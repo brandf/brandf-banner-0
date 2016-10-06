@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "./bin";
+/******/ 	__webpack_require__.p = "/bin/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -44,51 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
 	__webpack_require__(1);
-	
-	var _twgl = __webpack_require__(298);
-	
-	var _twgl2 = _interopRequireDefault(_twgl);
-	
-	__webpack_require__(299);
-	
-	var _plasma = __webpack_require__(303);
-	
-	var _plasma2 = _interopRequireDefault(_plasma);
-	
-	var _plasma3 = __webpack_require__(304);
-	
-	var _plasma4 = _interopRequireDefault(_plasma3);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var gl = _twgl2.default.getWebGLContext(document.getElementById('gl'));
-	var programInfo = _twgl2.default.createProgramInfo(gl, [_plasma2.default, _plasma4.default]);
-	
-	var arrays = {
-	  position: [-1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0]
-	};
-	var bufferInfo = _twgl2.default.createBufferInfoFromArrays(gl, arrays);
-	
-	function render(time) {
-	  _twgl2.default.resizeCanvasToDisplaySize(gl.canvas);
-	  gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
-	
-	  var uniforms = {
-	    time: time * 0.001,
-	    resolution: [gl.canvas.width, gl.canvas.height]
-	  };
-	
-	  gl.useProgram(programInfo.program);
-	  _twgl2.default.setBuffersAndAttributes(gl, programInfo, bufferInfo);
-	  _twgl2.default.setUniforms(programInfo, uniforms);
-	  _twgl2.default.drawBufferInfo(gl, gl.TRIANGLES, bufferInfo);
-	
-	  requestAnimationFrame(render);
-	}
-	requestAnimationFrame(render);
+	module.exports = __webpack_require__(298);
+
 
 /***/ },
 /* 1 */
@@ -8217,6 +8175,90 @@
 
 /***/ },
 /* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var foo = function () {
+	  var _ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee() {
+	    return regeneratorRuntime.wrap(function _callee$(_context) {
+	      while (1) {
+	        switch (_context.prev = _context.next) {
+	          case 0:
+	            _context.next = 2;
+	            return bar();
+	
+	          case 2:
+	            window.console.log('foo');
+	
+	          case 3:
+	          case 'end':
+	            return _context.stop();
+	        }
+	      }
+	    }, _callee, this);
+	  }));
+	
+	  return function foo() {
+	    return _ref.apply(this, arguments);
+	  };
+	}();
+	
+	var _twgl = __webpack_require__(299);
+	
+	var _twgl2 = _interopRequireDefault(_twgl);
+	
+	__webpack_require__(300);
+	
+	var _plasma = __webpack_require__(304);
+	
+	var _plasma2 = _interopRequireDefault(_plasma);
+	
+	var _plasma3 = __webpack_require__(305);
+	
+	var _plasma4 = _interopRequireDefault(_plasma3);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+	
+	var gl = _twgl2.default.getWebGLContext(document.getElementById('gl'));
+	var programInfo = _twgl2.default.createProgramInfo(gl, [_plasma2.default, _plasma4.default]);
+	
+	var arrays = {
+	  position: [-1, -1, 0, 1, -1, 0, -1, 1, 0, -1, 1, 0, 1, -1, 0, 1, 1, 0]
+	};
+	var bufferInfo = _twgl2.default.createBufferInfoFromArrays(gl, arrays);
+	
+	function bar() {
+	  return new Promise(function (res) {
+	    window.console.log('bar');
+	    res();
+	  });
+	}
+	
+	foo();
+	
+	function render(time) {
+	  _twgl2.default.resizeCanvasToDisplaySize(gl.canvas);
+	  gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+	
+	  var uniforms = {
+	    time: time * 0.001,
+	    resolution: [gl.canvas.width, gl.canvas.height]
+	  };
+	
+	  gl.useProgram(programInfo.program);
+	  _twgl2.default.setBuffersAndAttributes(gl, programInfo, bufferInfo);
+	  _twgl2.default.setUniforms(programInfo, uniforms);
+	  _twgl2.default.drawBufferInfo(gl, gl.TRIANGLES, bufferInfo);
+	
+	  requestAnimationFrame(render);
+	}
+	requestAnimationFrame(render);
+
+/***/ },
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -16753,16 +16795,16 @@
 
 
 /***/ },
-/* 299 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(300);
+	var content = __webpack_require__(301);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(302)(content, {});
+	var update = __webpack_require__(303)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -16779,21 +16821,21 @@
 	}
 
 /***/ },
-/* 300 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(301)();
+	exports = module.exports = __webpack_require__(302)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "html, body {\n  margin: 0;\n  height: 100%;\n}\n\n#gl {\n  width: 100%;\n  height: 100%;\n  background-color: blue;\n}\n", ""]);
+	exports.push([module.id, "html, body {\r\n  margin: 0;\r\n  height: 100%;\r\n}\r\n\r\n#gl {\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: blue;\r\n}\r\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 301 */
+/* 302 */
 /***/ function(module, exports) {
 
 	/*
@@ -16849,7 +16891,7 @@
 
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -17101,13 +17143,13 @@
 
 
 /***/ },
-/* 303 */
+/* 304 */
 /***/ function(module, exports) {
 
 	module.exports = "attribute vec4 position;\n\nvoid main() {\n  gl_Position = position;\n}\n"
 
 /***/ },
-/* 304 */
+/* 305 */
 /***/ function(module, exports) {
 
 	module.exports = "precision mediump float;\n\nuniform vec2 resolution;\nuniform float time;\n\nvoid main() {\n  vec2 uv = gl_FragCoord.xy / resolution;\n  gl_FragColor.r = 0.1 + 0.1 * cos(cos(time) + uv.x + (uv.y * 3.0) * cos(time));\n  gl_FragColor.g = 0.1 + 0.1 * cos(cos(time) + (1.0-uv.x) + (uv.y * 2.2) * cos(time * 1.2));\n  gl_FragColor.b = 0.1 + 0.1 * cos(cos(time) + uv.x + ((1.0-uv.y) * 1.7) * cos(time * 2.7));\n  gl_FragColor.a = 1.0;\n}\n"

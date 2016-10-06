@@ -1,8 +1,11 @@
 module.exports = {
-  entry: './src/app.js',
+  entry: [
+    'babel-polyfill',
+    './src/app.js',
+  ],
   output: {
-    path: './bin',
-    publicPath: './bin',
+    path: './bin/',
+    publicPath: '/bin/',
     filename: 'bundle.js',
     sourceMapFilename: '[file].map',
     devtoolModuleFilenameTemplate: 'webpack:///[resource-path]?[loaders]',
@@ -12,16 +15,16 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style!css',
+        loaders: ['style', 'css'],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader', 'eslint-loader'],
+        loaders: ['babel', 'eslint'],
       },
       {
         test: /\.(glsl|vert|frag)$/,
-        loader: 'shader',
+        loaders: ['shader'],
       },
     ],
   },

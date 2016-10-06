@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import twgl from 'twgl.js';
 import './app.css';
 import vs from './plasma.vert';
